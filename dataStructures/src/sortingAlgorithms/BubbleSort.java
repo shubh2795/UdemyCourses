@@ -1,4 +1,4 @@
-package SortingAlgorithms;
+package sortingAlgorithms;
 
 public class BubbleSort {
     // bubble sort is inplace, unstable and O n^2 time complexity
