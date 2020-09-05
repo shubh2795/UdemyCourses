@@ -20,13 +20,11 @@ import java.util.List;
 public class CovidDataService {
 
     private final String covidDataURL = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+    private List<LocationStatistics> statisticsList = new ArrayList<>();
 
     public List<LocationStatistics> getStatisticsList() {
         return statisticsList;
     }
-
-    private List<LocationStatistics> statisticsList = new ArrayList<>();
-
 
     public String getCovidDataURL() {
         return covidDataURL;
@@ -39,18 +37,17 @@ public class CovidDataService {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder().uri(URI.create(getCovidDataURL())).build();
         HttpResponse response = client.send(request, HttpResponse.BodyHandlers.ofString());
-        //System.out.println(response.body());  // test if we're getting the expected dta from repo
+
         StringReader csvReader = new StringReader((String) response.body());
         Iterable<CSVRecord> records = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(csvReader);
         for (CSVRecord record : records) {
             LocationStatistics statistics = new LocationStatistics();
             statistics.setState(record.get("Province/State"));
             statistics.setCountry(record.get("Country/Region"));
-            statistics.setTotalCases(Integer.parseInt(record.get(record.size()-1)));
-            System.out.println(statistics);
+            statistics.setTotalCases(Integer.parseInt(record.get(record.size() - 1)));
             tempStatisticsList.add(statistics);
 
         }
-        this.statisticsList=tempStatisticsList;
+        this.statisticsList = tempStatisticsList;
     }
 }
