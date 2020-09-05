@@ -20,6 +20,11 @@ import java.util.List;
 public class CovidDataService {
 
     private final String covidDataURL = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+
+    public List<LocationStatistics> getStatisticsList() {
+        return statisticsList;
+    }
+
     private List<LocationStatistics> statisticsList = new ArrayList<>();
 
 

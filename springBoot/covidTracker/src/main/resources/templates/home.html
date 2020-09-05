@@ -1,0 +1,30 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Covid Tracker Application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body>
+<!--test is the name we added to model as attribute-->
+<!--<p th:text="${locationStatistics}"></p>-->
+<table>
+    <tr>
+        <th>State</th>
+        <th>Country</th>
+        <th>Total Cases</th>
+    </tr>
+    <tr th:each="locationStatistic : ${locationStatistics}">
+        <td th:text="${locationStatistic.state}"></td>
+        <td th:text="${locationStatistic.country}"></td>
+        <td th:text="${locationStatistic.totalCases}">0</td>
+    </tr>
+</table>
+
+</body>
+
+</html>
