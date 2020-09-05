@@ -8,11 +8,11 @@
 		<version>2.3.3.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>springBoot.covidTracker</groupId>
+	<groupId>UdemyCourse.springBoot</groupId>
 	<artifactId>covidTracker</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>covidTracker</name>
-	<description>A spring boot project that tracks the globally reported covid cases, with a location wise breakdown so as to prevent false informations from spreading.</description>
+	<description>Spring Boot web application for tracking confirmed covid cases globally.</description>
 
 	<properties>
 		<java.version>11</java.version>
@@ -26,6 +26,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-csv</artifactId>
+			<version>1.8</version>
 		</dependency>
 
 		<dependency>
@@ -45,9 +51,6 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-
-
-
 	</dependencies>
 
 	<build>

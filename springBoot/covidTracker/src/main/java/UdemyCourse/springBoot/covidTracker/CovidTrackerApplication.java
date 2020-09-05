@@ -1,4 +1,5 @@
-package springBoot.covidTracker;
+package UdemyCourse.springBoot.covidTracker;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
