@@ -22,8 +22,10 @@ public class HomeController {
         Date date = new Date();
         List<LocationStatistics> allStats = covidDataService.getStatisticsList();
         int totalGlobalCases =  allStats.stream().mapToInt(stat -> stat.getTotalCases()).sum();
+        int totalNewCases = allStats.stream().mapToInt(stat -> stat.getDifferenceFromPrevDay()).sum();
         model.addAttribute("locationStatistics",covidDataService.getStatisticsList());
         model.addAttribute("totalGlobalCases",totalGlobalCases);
+        model.addAttribute("totalNewCases",totalNewCases);
         model.addAttribute("date",date);
         return "home";
      }

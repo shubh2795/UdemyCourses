@@ -19,6 +19,9 @@
         <hr/>
         <p class="lead">Total number of cases throughout the globe as of <span th:text="${date}"></span> :</p>
         <h1 class="display-4" th:text="${totalGlobalCases}"></h1>
+        <hr/>
+        <p class="lead">New cases throughout the globe :</p>
+        <h1 class="display-4" th:text="${totalNewCases}"></h1>
     </div>
 </div>
 <div class="container">
@@ -27,11 +30,13 @@
             <th scope="col">State</th>
             <th scope="col">Country</th>
             <th scope="col">Total Cases</th>
+            <th scope="col">Difference (prev. day)</th>
         </tr>
         <tr th:each="locationStatistic : ${locationStatistics}">
             <td th:text="${locationStatistic.state}" scope="row"></td>
             <td th:text="${locationStatistic.country}" scope="row"></td>
-            <td th:text="${locationStatistic.totalCases}" scope="row">0</td>
+            <td th:text="${locationStatistic.totalCases}" scope="row"></td>
+            <td th:text="${locationStatistic.differenceFromPrevDay}" scope="row">0</td>
         </tr>
     </table>
 </div>
