@@ -6,6 +6,7 @@ public class LocationStatistics {
     private int totalCases;
     private int differenceFromPrevDay;
 
+
     public int getDifferenceFromPrevDay() {
         return differenceFromPrevDay;
     }
@@ -13,7 +14,6 @@ public class LocationStatistics {
     public void setDifferenceFromPrevDay(int differenceFromPrevDay) {
         this.differenceFromPrevDay = differenceFromPrevDay;
     }
-
 
 
     public String getCountry() {
@@ -43,10 +43,10 @@ public class LocationStatistics {
     @Override
     public String toString() {
         return "LocationStatistics{" +
-                "Country='" + country + '\'' +
-                ", State='" + state + '\'' +
-                ", Total Cases=" + totalCases +
+                "country='" + country + '\'' +
+                ", state='" + state + '\'' +
+                ", totalCases=" + totalCases +
+                ", differenceFromPrevDay=" + differenceFromPrevDay +
                 '}';
     }
-
 }
